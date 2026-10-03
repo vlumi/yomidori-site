@@ -1,0 +1,22 @@
+{{- /* One app screenshot in the gallery. Sources live in assets/img/shots/ so
+       Hugo resizes them at build time — store PNGs are up to 2064×2752, far
+       larger than the grid ever shows. Emits 480/960-wide WebP with an srcset;
+       until the PNG is dropped in, a labelled placeholder stands in its place.
+       Usage: {{< shot name="ip-read" caption="A word tapped on the page" >}} */ -}}
+{{- $name := .Get "name" -}}
+{{- $caption := .Get "caption" -}}
+{{- $src := resources.Get (printf "img/shots/%s.png" $name) -}}
+<figure class="shot">
+  {{- with $src }}
+  {{- $small := (.Resize "480x webp q80").RelPermalink -}}
+  {{- $large := (.Resize "960x webp q80").RelPermalink -}}
+  <img src="{{ $small }}" srcset="{{ $small }} 480w, {{ $large }} 960w"
+       sizes="(max-width: 640px) 90vw, 360px"
+       alt="{{ $caption }}" loading="lazy">
+  {{- else }}
+  <div class="shot-placeholder" role="img" aria-label="{{ $caption }} (screenshot pending)">
+    <span>{{ $name }}.png</span>
+  </div>
+  {{- end }}
+  <figcaption>{{ $caption }}</figcaption>
+</figure>

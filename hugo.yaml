@@ -1,0 +1,30 @@
+baseURL: "https://yomidori.app/"
+locale: "en-US"
+title: "Yomidori"
+
+# Clean URLs; no taxonomies needed for a small landing/support site.
+disableKinds:
+  - taxonomy
+  - term
+  - RSS
+
+params:
+  tagline: "Point at a word, get its reading."
+  # Empty until the App Store listing is live; the badge hides itself meanwhile.
+  appStoreURL: ""
+  testFlightURL: ""
+  supportEmail: "ville@misaki.fi"
+  githubURL: "https://github.com/vlumi/yomidori"
+  sponsorURL: "https://github.com/sponsors/vlumi"
+
+menu:
+  main:
+    - name: "Screenshots"
+      pageRef: "/screenshots"
+      weight: 7
+    - name: "Support"
+      pageRef: "/support"
+      weight: 10
+    - name: "Privacy"
+      pageRef: "/privacy"
+      weight: 20

@@ -1,0 +1,200 @@
+/* Yomidori — the app's own palette on the page.
+   Cream paper, night green, a silver rule; nothing loaded from anywhere.
+   Self-contained, no external fonts or assets (fast, private, cache-hard). */
+
+:root {
+  --paper: #faf7f0;        /* the app's page */
+  --ink: #1a1a1a;
+  --ink-soft: #4a4744;
+  --green: #216b52;        /* night green, 夜緑 */
+  --silver: #6b7378;       /* the app's silver */
+  --line: #ddd8cc;         /* faint rule */
+  --tone: #f1ede3;         /* panel fill */
+  --max: 60rem;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+        "Yu Gothic", sans-serif;
+}
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+
+/* ---- header ---- */
+.site-head {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.brand { text-decoration: none; color: var(--ink); display: flex; align-items: center; gap: .5rem; }
+.brand-icon { width: 28px; height: 28px; border-radius: 7px; }
+.brand-mark { font-weight: 700; color: var(--green); }
+.brand-name { font-weight: 700; letter-spacing: -.01em; }
+.site-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  margin-left: 1.1rem;
+  font-weight: 600;
+}
+.site-nav a:hover { color: var(--green); }
+
+/* ---- hero ---- */
+.hero {
+  text-align: center;
+  padding: 2.5rem 0 3rem;
+  border-bottom: 1px solid var(--line);
+}
+.hero-icon {
+  width: 128px;
+  height: 128px;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+  margin-bottom: .6rem;
+}
+.hero-title {
+  font-size: clamp(2.4rem, 7vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--green);
+  margin: .4rem 0 0;
+  line-height: 1.1;
+}
+/* The romanized name under the katakana, quiet. */
+.hero-title .en {
+  display: block;
+  color: var(--ink-soft);
+  font-size: .4em;
+  font-weight: 600;
+  letter-spacing: .02em;
+  margin-top: .25em;
+}
+.hero-reading { margin: .6rem 0 .2rem; font-size: 1.4rem; }
+.hero-tagline { font-size: 1.25rem; font-weight: 700; margin: .6rem 0 1rem; }
+.hero-lede { max-width: 40rem; margin: 0 auto 1.5rem; color: var(--ink-soft); }
+.hero-soon { font-weight: 700; color: var(--green); }
+.hero-soon a { color: var(--green); text-decoration: underline; }
+.hero-soon a:hover { text-decoration: none; }
+
+/* ---- pitch: the line over the high morae, falling where the accent does ---- */
+.pitch { display: inline-flex; align-items: flex-end; gap: 0; color: var(--green); font-weight: 600; }
+.pitch .mora { padding: .15em .05em 0; border-top: 2px solid transparent; }
+.pitch .hi { border-top-color: var(--green); }
+.pitch .drop { border-right: 2px solid var(--green); }
+.pitch .num { font-size: .6em; color: var(--silver); margin-left: .5em; padding-bottom: .15em; font-weight: 500; }
+
+/* Official App Store badge (Apple marketing asset — do not alter the artwork).
+   Sized ~150px wide with clear space around it per Apple's guidelines. */
+.appstore-badge {
+  display: inline-block;
+  margin: .4rem 0;
+  transition: transform .08s ease;
+}
+.appstore-badge img { display: block; height: auto; }
+.appstore-badge:hover { transform: translateY(-1px); }
+
+/* ---- features ---- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem;
+  padding: 2.5rem 0;
+}
+.feature {
+  background: var(--tone);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.25rem 1.4rem;
+}
+.feature h2 { font-size: 1.15rem; margin: 0 0 .5rem; color: var(--green); }
+.feature p { margin: 0; color: var(--ink-soft); }
+
+.closing { text-align: center; padding: 1rem 0 3rem; font-weight: 700; }
+.closing .fine { font-weight: 400; }
+/* Links in the muted "fine print" still need to read as links. */
+.fine a { color: var(--green); text-decoration: underline; }
+.fine a:hover { text-decoration: none; }
+
+/* ---- prose (support / privacy) ---- */
+.prose { max-width: 44rem; margin: 2rem auto 3rem; }
+.prose h1 { font-size: 2rem; font-weight: 700; color: var(--green); border-bottom: 1px solid var(--line); padding-bottom: .3rem; }
+.prose h2 { font-size: 1.3rem; margin-top: 2rem; }
+.prose h3 { font-size: 1.1rem; margin-top: 1.6rem; }
+.prose a { color: var(--green); }
+.prose code { background: var(--tone); padding: .1em .35em; border-radius: 3px; }
+
+/* ---- footer ---- */
+.site-foot {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem 1.25rem 2.5rem;
+  text-align: center;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.site-foot nav a { color: var(--ink-soft); text-decoration: none; margin: 0 .6rem; font-weight: 600; }
+.site-foot nav a:hover { color: var(--green); }
+.fine { color: var(--ink-soft); font-size: .9rem; }
+
+/* ---- screenshots ---- */
+.shot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.4rem;
+  margin: 1.8rem 0;
+}
+/* Landscape (iPad on its side, Mac) shots: wider columns so they aren't squeezed. */
+.shot-grid--wide {
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+}
+.shot {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.shot img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: block;
+}
+.shot-placeholder {
+  aspect-ratio: 9 / 16;
+  border: 2px dashed var(--line);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--tone);
+  color: var(--ink-soft);
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: .8rem;
+}
+.shot-grid--wide .shot-placeholder { aspect-ratio: 16 / 10; }
+.shot figcaption {
+  font-size: .84rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f1412; --ink: #ece7db; --ink-soft: #b3ada0;
+    --green: #59ad8c; --silver: #c7ccd1;
+    --line: #26302b; --tone: #161d1a;
+  }
+  .hero-icon { box-shadow: 0 10px 30px rgba(0, 0, 0, .5); }
+}

@@ -1,0 +1,44 @@
+# Example nginx server block for yomidori.app.
+#
+# Start HTTP-only (port 80) so certbot can complete the ACME challenge; then run
+#   sudo certbot --nginx -d yomidori.app -d www.yomidori.app
+# and certbot ADDS the `listen 443 ssl` block + the HTTP->HTTPS redirect for you.
+# Do NOT hand-write the 443 block.
+#
+# `root` points at the web root ITSELF — deploy.sh builds straight into it
+# (--cleanDestinationDir), there is no `public/` subdir. Keep this in step with
+# WEBROOT in deploy.sh (default /var/www/yomidori.app).
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name yomidori.app www.yomidori.app;
+
+    root /var/www/yomidori.app;
+    index index.html;
+
+    # Hugo builds 404.html at the web root.
+    error_page 404 /404.html;
+
+    # Hugo emits clean directory URLs (/support/ -> /support/index.html).
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # Fingerprinted CSS: filename changes on content change, so cache hard.
+    location /css/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # Resized screenshots are content-hashed by Hugo too.
+    location /img/shots/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # Don't serve dotfiles.
+    location ~ /\. {
+        deny all;
+    }
+}

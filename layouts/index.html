@@ -1,0 +1,84 @@
+{{ define "main" }}
+  <section class="hero">
+    <img class="hero-icon" src="/appicon.png" width="128" height="128"
+         alt="Yomidori app icon: a Java sparrow on night green">
+
+    <h1 class="hero-title">ヨミドリ<span class="en">Yomidori</span></h1>
+    <p class="hero-reading">{{ partial "pitch.html" . }}</p>
+    <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
+    <p class="hero-lede">
+      A reading companion for Japanese paperbacks. Frame the line, tap the word
+      you can't read, and get its reading and its pitch — right there, without
+      leaving the page. The sentence you were reading becomes a card, and the
+      cards are what you study.
+    </p>
+    {{ with .Site.Params.appStoreURL }}
+      <a class="appstore-badge" href="{{ . }}"><img src="/img/app-store-badge.svg" alt="Download on the App Store" width="150" height="50"></a>
+    {{ else }}
+      <p class="hero-soon">Coming to the App Store for iPhone, iPad and Mac.</p>
+    {{ end }}
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h2>Help only where asked</h2>
+      <p>No furigana over the whole page, no translation of anything you didn't
+      tap. Recognizing the kanji you know is the point of reading; the app speaks
+      when you say you don't. Tap a word in a vertical column or a horizontal
+      line and the whole word lights up with its reading in kana and its pitch
+      accent. The meaning is one more tap away, never shown before you ask.</p>
+    </div>
+    <div class="feature">
+      <h2>The book is the corpus</h2>
+      <p>Keep a word and the sentence you met it in, as it stood on the page,
+      becomes its card. Meet the same word in another book and the card gains a
+      second sentence. Collections keep the cards by book, with the cover you
+      scanned.</p>
+    </div>
+    <div class="feature">
+      <h2>Lessons and reviews that ask you to type</h2>
+      <p>A lesson starts a card when you have time for it. Reviews ask three
+      things: the reading and the meaning by typing, and which pitch by a pick.
+      A question you miss comes back until you get it right. Spaced by FSRS,
+      with a switch for how often you'd like words back.</p>
+    </div>
+    <div class="feature">
+      <h2>Birds, not streaks</h2>
+      <p>Every card climbs from egg to hatchling, chick, fledgling, flying and
+      migrating as you remember it. The Study tab shows the week ahead by
+      quarter day, in the colours of the birds coming up, so a wall of reviews
+      is seen before it arrives — and nothing nags.</p>
+    </div>
+    <div class="feature">
+      <h2>Pitch, drawn</h2>
+      <p>Tokyo pitch accent from Kanjium, drawn over the kana the way a
+      dictionary draws it, estimated for compounds when the dictionary is
+      silent. Kanji come with their stroke order and their parts, and a kanji
+      you can't type can be found by its parts.</p>
+    </div>
+    <div class="feature">
+      <h2>Everything on the device</h2>
+      <p>Text recognition, tokenizing, readings, pitch, cards: all local,
+      offline, from dictionaries bundled with the app. No account, no server, no
+      model in the cloud. Your cards sync between your devices through your own
+      iCloud, unless you turn that off.</p>
+    </div>
+    <div class="feature">
+      <h2>iPhone, iPad &amp; Mac</h2>
+      <p>One app under one purchase, the same cards everywhere. The phone reads
+      the page in your other hand; the Mac reads what is pasted or dropped on
+      it and reviews on a keyboard. English and Japanese, from day one.</p>
+    </div>
+  </section>
+
+  <section class="closing">
+    <p>Free. No ads, no accounts, no tracking. Just the reading.</p>
+    <p class="fine">In development — on TestFlight now, the App Store next.</p>
+    {{ with .Site.Params.githubURL }}
+      <p class="fine">Open source — <a href="{{ . }}">code on GitHub</a>.</p>
+    {{ end }}
+    {{ with .Site.Params.sponsorURL }}
+      <p class="fine">Free, no ads — <a href="{{ . }}">sponsor the developer</a> if you like it.</p>
+    {{ end }}
+  </section>
+{{ end }}
