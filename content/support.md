@@ -41,8 +41,8 @@ worth an issue.
 **It reads the page sideways, or doesn't read it at all.**
 The page is read the way the phone was held when you pressed *Read*; if the
 phone was flat or turned, turn it upright and read again. Vertical text, as in
-a paperback, is read as columns; the *Vision* and *Close-up* recognizers under
-the page are there for a line Live Text misses.
+a paperback, is read as columns; the *Vision* recognizer under the page is
+there for a line Live Text misses.
 
 **What are the birds?**
 How far a card has come: an egg is waiting for its lesson, then a hatchling,
