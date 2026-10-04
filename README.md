@@ -1,7 +1,7 @@
 # yomidori.app
 
-The website for **Yomidori** (ヨミドリ) — a reading companion for Japanese
-paperbacks, for iPhone, iPad and Mac. Landing, screenshots, support and privacy
+The website for **Yomidori** (ヨミドリ) — a companion for whatever Japanese
+you're reading, for iPhone, iPad and Mac. Landing, screenshots, support and privacy
 pages.
 
 The app itself is open source (MIT) at

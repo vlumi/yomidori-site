@@ -1,6 +1,6 @@
 ---
 title: "Screenshots"
-description: "A look at Yomidori on iPhone, iPad and Mac — a word tapped on the page, its reading and pitch, the cards it becomes, and the reviews."
+description: "A look at Yomidori on iPhone, iPad and Mac — a word tapped on whatever you are reading, its reading and pitch, the cards it becomes, and the reviews."
 ---
 
 Yomidori is one native app on every screen: the phone reads the page in your

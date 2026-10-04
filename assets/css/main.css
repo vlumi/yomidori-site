@@ -88,11 +88,19 @@ body {
 .hero-soon a { color: var(--green); text-decoration: underline; }
 .hero-soon a:hover { text-decoration: none; }
 
-/* ---- pitch: the line over the high morae, falling where the accent does ---- */
+/* ---- pitch, drawn as the app draws it: a line over the high morae with a short
+   tick where it rises and a short tick where it falls (⌐み¬), never a full bar. ---- */
 .pitch { display: inline-flex; align-items: flex-end; gap: 0; color: var(--green); font-weight: 600; }
-.pitch .mora { padding: .15em .05em 0; border-top: 2px solid transparent; }
-.pitch .hi { border-top-color: var(--green); }
-.pitch .drop { border-right: 2px solid var(--green); }
+.pitch .mora { position: relative; padding: .2em .04em 0; }
+.pitch .hi::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: .05em;
+  height: .3em;
+  border-top: 2px solid var(--green);
+  border-left: 2px solid var(--green);
+}
+.pitch .drop::before { border-right: 2px solid var(--green); }
 .pitch .num { font-size: .6em; color: var(--silver); margin-left: .5em; padding-bottom: .15em; font-weight: 500; }
 
 /* Official App Store badge (Apple marketing asset — do not alter the artwork).
