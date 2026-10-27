@@ -14,6 +14,7 @@
     </p>
     {{ with .Site.Params.appStoreURL }}
       <a class="appstore-badge" href="{{ . }}"><img src="/img/app-store-badge.svg" alt="Download on the App Store" width="150" height="50"></a>
+      {{ with $.Site.Params.storeNote }}<p class="hero-soon">{{ . }}</p>{{ end }}
     {{ else }}
       <p class="hero-soon">Coming to the App Store for iPhone, iPad and Mac.</p>
     {{ end }}
@@ -74,7 +75,11 @@
 
   <section class="closing">
     <p>Free. No ads, no accounts, no tracking. Just the reading.</p>
-    <p class="fine">In development — on TestFlight now, the App Store next.</p>
+    {{ if .Site.Params.appStoreURL }}
+      <p class="fine">On the App Store.</p>
+    {{ else }}
+      <p class="fine">In development — on TestFlight now, the App Store next.</p>
+    {{ end }}
     {{ with .Site.Params.githubURL }}
       <p class="fine">Open source — <a href="{{ . }}">code on GitHub</a>.</p>
     {{ end }}

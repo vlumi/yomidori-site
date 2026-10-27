@@ -11,7 +11,9 @@ disableKinds:
 params:
   tagline: "Point at a word, get its reading."
   # Empty until the App Store listing is live; the badge hides itself meanwhile.
-  appStoreURL: ""
+  appStoreURL: "https://apps.apple.com/app/id6813011056"
+  # Under the badge while only some of the apps are out; empty once all are.
+  storeNote: "On the Mac now; iPhone and iPad are on their way."
   testFlightURL: ""
   supportEmail: "ville@misaki.fi"
   githubURL: "https://github.com/vlumi/yomidori"
