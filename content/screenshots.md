@@ -7,9 +7,6 @@ Yomidori is one native app on every screen: the phone reads the page in your
 other hand, the iPad has room for the page and the words side by side, and the
 Mac reads what is pasted or dropped on it.
 
-*The pictures are on their way — these frames fill in as each form of the app
-settles.*
-
 ### On iPhone
 
 {{< shotgrid >}}
