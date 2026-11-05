@@ -13,7 +13,7 @@ Mac reads what is pasted or dropped on it.
 {{< shot name="ip-read" caption="The page frozen on the screen; a word tapped lights up with its reading and its pitch." >}}
 {{< shot name="ip-word" caption="Every word of the selection, its reading, pitch and meaning — and the kanji behind it, with stroke order." >}}
 {{< shot name="ip-review" caption="A review: the sentence as it stood on the page, the reading typed, the pitch picked." >}}
-{{< shot name="ip-study" caption="The Study tab: what is due, and the week ahead by quarter day in the colours of the birds coming up." >}}
+{{< shot name="ip-study" caption="The Study tab: what is due, and the week ahead by quarter day, in the colours of the birds coming up and, below, of what they ask." >}}
 {{< /shotgrid >}}
 
 ### On iPad
